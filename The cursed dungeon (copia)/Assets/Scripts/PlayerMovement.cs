@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody rigidbody;
+    new Rigidbody rigidbody;
     Vector2 inputMov;
     public float velCamina = 10f;
     public float velCorrer = 20f;
