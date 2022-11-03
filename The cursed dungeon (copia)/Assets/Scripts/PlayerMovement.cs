@@ -5,22 +5,32 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     new Rigidbody rigidbody;
     Vector2 inputMov;
-    public float velCamina = 10f;
-    public float velCorrer = 20f;
+    public float velCamina = 6f;
+    public float velCorrer = 10f;
     public float rotationSpeed = 100;
+    public float gravedad;
+
+    public Animator animator;
+
     private float x, y;
     private bool HActivo; //se utiliza para saber si estan presionadas las teclas
     private bool VActivo; //se utiliza para saber si estan presionadas las teclas
-    //public Animator anim;
 
     void Start() {
 
         rigidbody = GetComponent<Rigidbody>();
-        //anim = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        //Con esta linea de codigo modificamos la gravedad que ya viene en unity.
+        Physics.gravity *= gravedad;
     }
 
+<<<<<<< HEAD
     // Update is called once per frame
     void Update() {
+=======
+    void Update()
+    {
+>>>>>>> main
         inputMov.x = Input.GetAxis("Horizontal");
         inputMov.y = Input.GetAxis("Vertical");
         x = Input.GetAxis("Horizontal");
@@ -34,9 +44,8 @@ public class PlayerMovement : MonoBehaviour {
             transform.forward * speed * inputMov.y //movernos hacia adelante y atras.
             + transform.right * speed * inputMov.x; //movernos hacia izquierda y derecha.
 
-        //anim.SetFloat("VelX", x); //reproduce la animacion de correr y caminar.
-
-        //anim.SetFloat("VelY", y); //reproduce las animaciones de giro a los alterales.
+        animator.SetFloat("VelX", x); //reproduce la animacion de correr y caminar.
+        animator.SetFloat("VelY", y);
 
 
         if (Input.GetButtonDown("Horizontal")) {

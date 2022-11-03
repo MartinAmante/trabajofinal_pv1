@@ -4,17 +4,21 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Trampa
+=======
+  - Bala
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interaction
   - Water
   - UI
   - 
-  - 
-  - 
+  - Bala
+  - Weapon
   - 
   - 
   - 
