@@ -24,13 +24,7 @@ public class PlayerMovement : MonoBehaviour {
         Physics.gravity *= gravedad;
     }
 
-<<<<<<< HEAD
-    // Update is called once per frame
     void Update() {
-=======
-    void Update()
-    {
->>>>>>> main
         inputMov.x = Input.GetAxis("Horizontal");
         inputMov.y = Input.GetAxis("Vertical");
         x = Input.GetAxis("Horizontal");
