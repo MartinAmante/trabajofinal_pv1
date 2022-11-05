@@ -16,17 +16,8 @@ public class GeneradorBala : MonoBehaviour
             case 2: Invoke("Disparar",0); break;
             default: break;
         }
-
+    }
     
-   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void Disparar()
     {
         Instantiate(BolaEnemigo, transform.position, transform.rotation);

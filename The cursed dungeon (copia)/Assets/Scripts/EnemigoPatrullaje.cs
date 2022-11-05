@@ -50,7 +50,7 @@ public class EnemigoPatrullaje : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("BalaPlayer"))
+        if(other.CompareTag("BolaEnemigo"))
         {
             puntaje.SumarPuntos(cantidadPuntos);
             

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bolas : MonoBehaviour
+public class BolaEnemigo : MonoBehaviour
 {
    [SerializeField]
-    private float speedX = 10f;
+    private float speedX = 30f;
 
   
 
@@ -19,7 +19,7 @@ public class Bolas : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if( other.gameObject.tag == "Enemy" || other.gameObject.tag == "Pared" || other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
         }
