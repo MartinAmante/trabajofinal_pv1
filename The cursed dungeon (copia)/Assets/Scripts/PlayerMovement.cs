@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(other.CompareTag("golpe"))
         {
-            Debug.Log("danio");
+            //Debug.Log("danio");
         }
     }
 }

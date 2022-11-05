@@ -22,54 +22,63 @@ public class MovimientoZombie : MonoBehaviour
 
     public float rangoAlerta;
 
-    public GameObject jugador1;
+
+
 
     
 
     void Start()
     {
-        Accion();
-        jugador1 = GameObject.Find("Player");
+       Accion();
+        
     }
 
     
     void Update()
     {
-     
-        estarAlerta = Physics.CheckSphere(transform.position, rangoAlerta, capaJugador);
+      estarAlerta = Physics.CheckSphere(transform.position, rangoAlerta, capaJugador);
 
-        if(estarAlerta == true)
-        {
-        transform.LookAt(new Vector3(jugador.position.x, transform.position.y, jugador.position.z));
-        transform.position = Vector3.MoveTowards(transform.position,new Vector3(jugador.position.x, transform.position.y, jugador.position.z), velocidad * Time.deltaTime );
-        GetComponent<Animator>().SetBool("Activo", true);
-          if(Vector3.Distance(transform.position, jugador.transform.position) < 5)
-          {
-            GetComponent<Animator>().SetBool("atacar", true);
-            velMovimiento = 0;
-          }
-        }
-        
-        if(estarAlerta == false)
-        {
-         GetComponent<Animator>().SetBool("Activo3", false);
-        }
-         if(camina)
+      if(estarAlerta == false)
+      {
+        GetComponent<Animator>().SetBool("correr", false);
+        if(camina)
         {
          transform.position += (transform.forward * velMovimiento * Time.deltaTime);
-         GetComponent<Animator>().SetBool("Activo2", true);
+         GetComponent<Animator>().SetBool("caminar", true);
         }
         if(espera)
         {
-          GetComponent<Animator>().SetBool("Activo2", false);
+          GetComponent<Animator>().SetBool("caminar", false);
         }
         if(gira)
         {
           transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
         }
-    
+      }
+      else
+      {
+        if(Vector3.Distance(transform.position, jugador.transform.position) > 1.5)
+        {
+          transform.LookAt(new Vector3(jugador.position.x, transform.position.y, jugador.position.z));
+          transform.position = Vector3.MoveTowards(transform.position,new Vector3(jugador.position.x, transform.position.y, jugador.position.z), velocidad * Time.deltaTime );
+          GetComponent<Animator>().SetBool("correr", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("correr", false);
+            GetComponent<Animator>().SetBool("caminar", false);
+            GetComponent<Animator>().SetBool("atacar", true);
 
-     }
+        }
+
+      }
+    } 
+
+
+     public void FinalAnimacion()
+    {
+        GetComponent<Animator>().SetBool("atacar", false);
+    }
 
     void Accion()
     {
@@ -106,5 +115,6 @@ public class MovimientoZombie : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, rangoAlerta);
         
     }
+  
 }
 

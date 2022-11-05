@@ -10,10 +10,6 @@ public class EnemigoPatrullaje : MonoBehaviour
     private Transform[] puntosDeControl;
     [SerializeField] 
     private float velocidadCorrutina = 3f;
-    [SerializeField] 
-    private float cantidadPuntos;
-    [SerializeField] 
-    private Puntaje puntaje;
 
     public float rangoAlerta;
 
@@ -40,21 +36,28 @@ public class EnemigoPatrullaje : MonoBehaviour
        if(estarAlerta == true)
        {
         StopAllCoroutines();
-        GetComponent<Animator>().SetBool("Activo3", true);
+        GetComponent<Animator>().SetBool("correr", true);
+        velocidad = 1;
         //transform.LookAt(jugador);
         transform.LookAt(new Vector3(jugador.position.x, transform.position.y, jugador.position.z));
         transform.position = Vector3.MoveTowards(transform.position,new Vector3(jugador.position.x, transform.position.y, jugador.position.z), velocidad * Time.deltaTime );
+        if(Vector3.Distance(transform.position, jugador.transform.position) > 1.5)
+        {
+            GetComponent<Animator>().SetBool("correr", false);
+            GetComponent<Animator>().SetBool("caminar", false);
+            GetComponent<Animator>().SetBool("atacar", true);
+        }
        }
-       
+       else
+       {
+        GetComponent<Animator>().SetBool("caminar", true);
+       }
+        
     }
 
-    void OnTriggerEnter(Collider other)
+        public void FinalAnimacion()
     {
-        if(other.CompareTag("BolaEnemigo"))
-        {
-            puntaje.SumarPuntos(cantidadPuntos);
-            
-        }
+        GetComponent<Animator>().SetBool("atacar", false);
     }
 
     private void OnDrawGizmos()
@@ -72,7 +75,7 @@ public class EnemigoPatrullaje : MonoBehaviour
      {
         while (enemigo.transform.position != nuevaPosicion)
         {
-           GetComponent<Animator>().SetBool("Activo2", true);
+           GetComponent<Animator>().SetBool("caminar", true);
            enemigo.transform.position = Vector3.MoveTowards(enemigo.transform.position, nuevaPosicion, velocidadCorrutina * Time.deltaTime);
            yield return null;
         }
