@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MovimientoZombie : MonoBehaviour
 {
-   public float velMovimiento, velRotacion;
+
+    public float velMovimiento, velRotacion;
 
     public float tiempoReaccion = 0.8f;
 
@@ -13,6 +14,7 @@ public class MovimientoZombie : MonoBehaviour
     public bool espera, camina, gira, estarAlerta;
 
     public Transform jugador;
+
     [SerializeField]
     private float velocidad = 3;
 
@@ -20,30 +22,42 @@ public class MovimientoZombie : MonoBehaviour
 
     public float rangoAlerta;
 
+    public GameObject jugador1;
+
+    
+
     void Start()
     {
         Accion();
+        jugador1 = GameObject.Find("Player");
     }
 
     
     void Update()
     {
+     
         estarAlerta = Physics.CheckSphere(transform.position, rangoAlerta, capaJugador);
 
         if(estarAlerta == true)
         {
-        GetComponent<Animator>().SetBool("Activo", true);
         transform.LookAt(new Vector3(jugador.position.x, transform.position.y, jugador.position.z));
         transform.position = Vector3.MoveTowards(transform.position,new Vector3(jugador.position.x, transform.position.y, jugador.position.z), velocidad * Time.deltaTime );
+        GetComponent<Animator>().SetBool("Activo", true);
+          if(Vector3.Distance(transform.position, jugador.transform.position) < 5)
+          {
+            GetComponent<Animator>().SetBool("atacar", true);
+            velMovimiento = 0;
+          }
         }
+        
         if(estarAlerta == false)
         {
          GetComponent<Animator>().SetBool("Activo3", false);
         }
          if(camina)
         {
-         GetComponent<Animator>().SetBool("Activo2", true);
          transform.position += (transform.forward * velMovimiento * Time.deltaTime);
+         GetComponent<Animator>().SetBool("Activo2", true);
         }
         if(espera)
         {
@@ -53,9 +67,10 @@ public class MovimientoZombie : MonoBehaviour
         {
           transform.Rotate(Vector3.up * velRotacion * Time.deltaTime);
         }
+    
 
-     
-    }
+     }
+
     void Accion()
     {
         movimiento = Random.Range(1,4);

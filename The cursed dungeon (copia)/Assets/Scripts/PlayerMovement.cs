@@ -67,4 +67,11 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("golpe"))
+        {
+            Debug.Log("danio");
+        }
+    }
 }

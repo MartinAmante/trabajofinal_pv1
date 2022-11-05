@@ -9,6 +9,7 @@ TagManager:
   - BolaEnemigo
   - Pared
   - Enemy
+  - golpe
   layers:
   - Default
   - TransparentFX
