@@ -32,7 +32,6 @@ public class MovimientoZombie : MonoBehaviour
 
         if(estarAlerta == true)
         {
-        //transform.LookAt(jugador);
         GetComponent<Animator>().SetBool("Activo", true);
         transform.LookAt(new Vector3(jugador.position.x, transform.position.y, jugador.position.z));
         transform.position = Vector3.MoveTowards(transform.position,new Vector3(jugador.position.x, transform.position.y, jugador.position.z), velocidad * Time.deltaTime );
