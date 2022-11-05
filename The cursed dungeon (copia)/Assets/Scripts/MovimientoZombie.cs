@@ -22,6 +22,8 @@ public class MovimientoZombie : MonoBehaviour
 
     public float rangoAlerta;
 
+    public int Dano = 10;
+
 
 
 
@@ -115,6 +117,16 @@ public class MovimientoZombie : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, rangoAlerta);
         
     }
+
+     private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            other.GetComponent<BarraVida>().RecibirDano(10);
+            //Destroy(gameObject);
+        }
+        
+    } 
   
 }
 
