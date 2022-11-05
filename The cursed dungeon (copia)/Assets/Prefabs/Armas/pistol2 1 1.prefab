@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7279735166758098874}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: Boquilla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 3214448184893902680}
   - component: {fileID: 826679766136454034}
   - component: {fileID: 4373750098721144179}
-  - component: {fileID: 8540165866257684672}
-  m_Layer: 8
+  - component: {fileID: 4817466619242148232}
+  m_Layer: 3
   m_Name: pistol2 1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42b80b539a425941b6a572ae5125ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8540165866257684672
+--- !u!114 &4817466619242148232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,10 +138,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1186708046257019463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ef2ef9a8d1a8341818866726b6657e, type: 3}
+  m_Script: {fileID: 11500000, guid: fa9cba8935885b2499e2647323362aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoint: {fileID: 7279735166758098874}
   Bala: {fileID: 7852698852224773595, guid: 2526ec5738784fa46b41df58c30bd900, type: 3}
-  FuerzaDisparo: 2500
+  FuerzaDisparo: 1500
   cooldown: 0.5
