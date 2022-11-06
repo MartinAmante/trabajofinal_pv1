@@ -19,7 +19,7 @@ public class AudioEffectBehaviour : MonoBehaviour
         }
         else
         {
-            audioAmbiente.volume += 0.5f * Time.deltaTime;
+            audioAmbiente.volume +=0.5f * Time.deltaTime;
             audioJefeFinal.volume -= 0.5f * Time.deltaTime;
 
         }
