@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DañoFlecha : MonoBehaviour {
+public class Danio : MonoBehaviour
+{
+    // Start is called before the first frame update
     private float danio;
     // Start is called before the first frame update
     void Start() {
