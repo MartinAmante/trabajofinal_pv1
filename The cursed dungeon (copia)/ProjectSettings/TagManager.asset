@@ -5,11 +5,23 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bala
+<<<<<<< HEAD
+=======
+  - Trampa
+  - BolaEnemigo
+  - Pared
+  - Enemy
+  - golpe
+>>>>>>> Amante
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - Arma
+=======
+  - Player
+>>>>>>> Amante
   - Water
   - UI
   - 
