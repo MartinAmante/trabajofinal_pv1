@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuController : MonoBehaviour
-{
+public class MainMenuController : MonoBehaviour {
 
     Animator anim;
 
@@ -17,11 +16,9 @@ public class MainMenuController : MonoBehaviour
     public GameObject GamePanel;
     public GameObject ControlsPanel;
     public GameObject GfxPanel;
-    public GameObject LoadGamePanel;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         anim = GetComponent<Animator>();
 
         //new key
@@ -30,8 +27,7 @@ public class MainMenuController : MonoBehaviour
 
     #region Open Different panels
 
-    public void openOptions()
-    {
+    public void openOptions() {
         //enable respective panel
         MainOptionsPanel.SetActive(true);
         StartGameOptionsPanel.SetActive(false);
@@ -47,8 +43,7 @@ public class MainMenuController : MonoBehaviour
 
     }
 
-    public void openStartGameOptions()
-    {
+    public void openStartGameOptions() {
         //enable respective panel
         MainOptionsPanel.SetActive(false);
         StartGameOptionsPanel.SetActive(true);
@@ -66,13 +61,11 @@ public class MainMenuController : MonoBehaviour
 
     }
 
-    public void openOptions_Game()
-    {
+    public void openOptions_Game() {
         //enable respective panel
         GamePanel.SetActive(true);
         ControlsPanel.SetActive(false);
         GfxPanel.SetActive(false);
-        LoadGamePanel.SetActive(false);
 
 
         //play anim for opening game options panel
@@ -81,13 +74,11 @@ public class MainMenuController : MonoBehaviour
         playClickSound();
 
     }
-    public void openOptions_Controls()
-    {
+    public void openOptions_Controls() {
         //enable respective panel
         GamePanel.SetActive(false);
         ControlsPanel.SetActive(true);
         GfxPanel.SetActive(false);
-        LoadGamePanel.SetActive(false);
 
         //play anim for opening game options panel
         anim.Play("OptTweenAnim_on");
@@ -96,13 +87,11 @@ public class MainMenuController : MonoBehaviour
         playClickSound();
 
     }
-    public void openOptions_Gfx()
-    {
+    public void openOptions_Gfx() {
         //enable respective panel
         GamePanel.SetActive(false);
         ControlsPanel.SetActive(false);
         GfxPanel.SetActive(true);
-        LoadGamePanel.SetActive(false);
 
         //play anim for opening game options panel
         anim.Play("OptTweenAnim_on");
@@ -112,13 +101,11 @@ public class MainMenuController : MonoBehaviour
 
     }
 
-    public void openContinue_Load()
-    {
+    public void openContinue_Load() {
         //enable respective panel
         GamePanel.SetActive(false);
         ControlsPanel.SetActive(false);
         GfxPanel.SetActive(false);
-        LoadGamePanel.SetActive(true);
 
         //play anim for opening game options panel
         anim.Play("OptTweenAnim_on");
@@ -128,8 +115,7 @@ public class MainMenuController : MonoBehaviour
 
     }
 
-    public void newGame()
-    {
+    public void newGame() {
         if (!string.IsNullOrEmpty(newGameSceneName))
             SceneManager.LoadScene(newGameSceneName);
         else
@@ -140,8 +126,7 @@ public class MainMenuController : MonoBehaviour
 
     #region Back Buttons
 
-    public void back_options()
-    {
+    public void back_options() {
         //simply play anim for CLOSING main options panel
         anim.Play("buttonTweenAnims_off");
 
@@ -152,8 +137,7 @@ public class MainMenuController : MonoBehaviour
         playClickSound();
     }
 
-    public void back_options_panels()
-    {
+    public void back_options_panels() {
         //simply play anim for CLOSING main options panel
         anim.Play("OptTweenAnim_off");
         //play click sfx
@@ -161,20 +145,17 @@ public class MainMenuController : MonoBehaviour
 
     }
 
-    public void Quit()
-    {
+    public void Quit() {
         Application.Quit();
     }
     #endregion
 
     #region Sounds
-    public void playHoverClip()
-    {
+    public void playHoverClip() {
 
     }
 
-    void playClickSound()
-    {
+    void playClickSound() {
 
     }
 

@@ -4,17 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - golpe
+  - Enemy
+  - BolaEnemigo
+  - Trampa
   - Bala
+  - Boss
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Arma
+  - 
   - Water
   - UI
+  - Player
   - 
   - 
-  - Interaction
   - 
   - 
   - 
