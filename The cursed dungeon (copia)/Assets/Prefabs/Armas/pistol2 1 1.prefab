@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3214448184893902680}
   - component: {fileID: 826679766136454034}
   - component: {fileID: 4373750098721144179}
-  - component: {fileID: 4817466619242148232}
+  - component: {fileID: -5507268535545958625}
   m_Layer: 3
   m_Name: pistol2 1 1
   m_TagString: Untagged
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42b80b539a425941b6a572ae5125ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4817466619242148232
+--- !u!114 &-5507268535545958625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1186708046257019463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9cba8935885b2499e2647323362aee, type: 3}
+  m_Script: {fileID: 11500000, guid: 01b6ae0daa28e0844bd30afce1b2d1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoint: {fileID: 7279735166758098874}

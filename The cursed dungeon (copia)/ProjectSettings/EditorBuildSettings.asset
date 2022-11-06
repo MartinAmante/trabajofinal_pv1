@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prefabs/Dungeon/EXAMPLE/Demo_Scene.unity
     guid: 14a2c64dbd956d346b9f674d144cc297
+  - enabled: 1
+    path: Assets/Scenes/Fin.unity
+    guid: 89560000d4577e542a531f36799e898f
   m_configObjects: {}

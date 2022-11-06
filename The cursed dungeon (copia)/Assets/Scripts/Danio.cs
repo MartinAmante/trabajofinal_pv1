@@ -8,7 +8,7 @@ public class Danio : MonoBehaviour
     private float danio;
     // Start is called before the first frame update
     void Start() {
-        danio = 5;
+        danio = 30;
     }
 
     // Update is called once per frame
@@ -16,8 +16,8 @@ public class Danio : MonoBehaviour
 
     }
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player") && other.GetComponent<BarraSalud>()) {
-            other.GetComponent<BarraSalud>().RecibirDanio(danio);
+        if (other.CompareTag("Player") && other.GetComponent<BarraVida>()) {
+            other.GetComponent<BarraVida>().RecibirDano(danio);
         }
     }
 }
