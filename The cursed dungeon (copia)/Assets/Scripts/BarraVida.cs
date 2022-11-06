@@ -28,9 +28,15 @@ public class BarraVida : MonoBehaviour
         SaludBarra.fillAmount = SaludActual / SaludMax;
     }
 
+<<<<<<< HEAD
     public void RecibirDaño(float daño)
     {
         SaludActual -= daño;
+=======
+    public void RecibirDano(float Dano)
+    {
+        SaludActual -= Dano;
+>>>>>>> Amante
         PantallaRoja.alpha = 1;
 
         if (SaludActual <= 0)

@@ -24,23 +24,32 @@ public class Enemigo : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player") {
+        if (other.tag == "Bala") {
             QuitarVida();
             Debug.Log("colisiono");
         }
     }
 
     private void LanzarLLamas() {
-        if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Idle01") {
-            llama.SetActive(false);
-            //Debug.Log("Tirar Llamas");
-        } else {
-            llama.SetActive(true);
-            //Debug.Log("No tirar Llamas");
+        if (vida > 0) {
+            if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Idle01") {
+                llama.SetActive(false);
+                //Debug.Log("Tirar Llamas");
+            } else {
+                llama.SetActive(true);
+                //Debug.Log("No tirar Llamas");
+            }
         }
+
+
     }
     private void QuitarVida() {
         this.vida -= 10;
+        if (vida <= 0) {
+            llama.SetActive(false);
+            animator.SetBool("Muerto", true);
+
+        }
     }
     private void Atacar() {
         animator.SetBool("Atacar", true);

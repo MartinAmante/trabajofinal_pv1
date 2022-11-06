@@ -8,6 +8,8 @@ public class BalaBehaviour : MonoBehaviour
 
     public GameObject Bala;
 
+    public int cantidadVida = 20;
+
     public float FuerzaDisparo = 1500f;
     //Con esto tendremos un tiempo de espera entre disparo para que no disparemos constantemente.
     public float cooldown = 0.5f;
@@ -32,5 +34,14 @@ public class BalaBehaviour : MonoBehaviour
 
         }
     }
+      private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            other.GetComponent<RecibirDanio>().RestarVida(20);
+            //Destroy(gameObject);
+        }
+        
+    } 
 
 }
