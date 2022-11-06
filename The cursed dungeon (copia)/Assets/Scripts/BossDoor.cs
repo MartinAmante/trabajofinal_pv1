@@ -21,18 +21,26 @@ public class BossDoor : MonoBehaviour
     {
 
     }
-
     public void OpenClose()
     {
-        if (isOpen != true)
-        {
-            Transform transformDoor = transform.GetChild(0).transform;
-            while (transformDoor.position.y < 3.5f)
+       
+            if (isOpen != true)
             {
-                transformDoor.Translate(0, speedMoveGate * Time.deltaTime, 0);
+                Transform transformDoor = transform.GetChild(0).transform;
+                while (transformDoor.position.y < 3.5f)
+                {
+                    transformDoor.Translate(0, speedMoveGate * Time.deltaTime, 0);
+                
+                  
+                }
+                isOpen = true;
+               
             }
-            isOpen = true;
-        }
+        
     }
+   
+
+
+   
 
 }

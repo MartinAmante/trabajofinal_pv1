@@ -6,10 +6,10 @@ public class BotonScript : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        BossDoor BossDoor = GameObject.Find("BossDoor").GetComponent<BossDoor>();
-        if (BossDoor.NumberDoor == 1)
+        BossDoor bossDoor = GameObject.Find("BossDoor").GetComponent<BossDoor>();
+        if (bossDoor.NumberDoor == 1)
         {
-            BossDoor.OpenClose();
+            bossDoor.OpenClose();
         }
     }
 }
