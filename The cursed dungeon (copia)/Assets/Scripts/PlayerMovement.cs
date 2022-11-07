@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
+
     new Rigidbody rigidbody;
     Vector2 inputMov;
     public float velCamina = 6f;
@@ -17,7 +18,6 @@ public class PlayerMovement : MonoBehaviour {
     private bool VActivo; //se utiliza para saber si estan presionadas las teclas
 
     void Start() {
-
         rigidbody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         //Con esta linea de codigo modificamos la gravedad que ya viene en unity.
@@ -45,33 +45,24 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown("Horizontal")) {
             if (VActivo == false) {
                 HActivo = true;
-                //steep.Play();
             }
         }
         if (Input.GetButtonDown("Vertical")) {
             if (HActivo == false) {
                 VActivo = true;
-                //steep.Play();
+
             }
         }
         if (Input.GetButtonUp("Horizontal")) {
             HActivo = false;
             if (VActivo == false) {
-                //steep.Pause();
+
             }
         }
         if (Input.GetButtonUp("Vertical")) {
             VActivo = false;
             if (HActivo == false) {
-                //steep.Pause();
             }
-        }
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("golpe"))
-        {
-            //Debug.Log("danio");
         }
     }
 }

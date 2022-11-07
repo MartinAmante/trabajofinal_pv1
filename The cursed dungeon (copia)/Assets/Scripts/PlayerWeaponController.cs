@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-
+    //Aqui creamos un array de las armas iniciales dele player.
     public List<WeaponController> ArmasIniciales= new List<WeaponController>();
 
     public Transform weaponParentSocket;
@@ -15,7 +15,6 @@ public class PlayerWeaponController : MonoBehaviour
 
     private WeaponController[] weaponSlots = new WeaponController[3];
 
-    // Start is called before the first frame update
     void Start()
     {
         activeWeaponIndex = -1;

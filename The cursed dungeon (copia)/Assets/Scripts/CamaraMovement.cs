@@ -24,7 +24,6 @@ public class CamaraMovement : MonoBehaviour
         }
         if (Ver != 0)
         {
-            //camera.Rotate(Vector3.left * Ver * sensibility.y);
             float angle = (camera.localEulerAngles.x - Ver * sensibility.y + 360) % 360;
             if (angle > 180) { angle -= 360; }
             angle = Mathf.Clamp(angle, -80, 80);
